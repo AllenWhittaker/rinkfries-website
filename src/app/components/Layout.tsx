@@ -200,7 +200,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Rink Fries Inc. All rights reserved. Built in Nova Scotia, Canada.</p>
+          <p className="inline-flex items-center gap-1">&copy; {new Date().getFullYear()} Rink Fries Inc. All rights reserved. Built in Nova Scotia, Canada <svg width="14" height="14" viewBox="0 0 36 36" className="inline-block"><path fill="#FF4444" d="M18 2.4l-2.5 7.8-3-5.2c-.3-.5-1-.5-1.3 0L8 11.2 4.5 9.5c-.5-.2-1 .1-1 .7l.8 8.3L.8 22c-.2.5.1 1 .7 1l3.7-.3 1.3 4.5c.1.5.7.7 1.1.4L11 25l2.5 7.8c.2.5.8.5 1 0L18 25l3.5 7.8c.2.5.8.5 1 0L25 25l3.4 2.6c.4.3 1 .1 1.1-.4l1.3-4.5 3.7.3c.5 0 .9-.5.7-1l-3.5-3.5.8-8.3c0-.5-.5-.9-1-.7L28 11.2l-3.2-6.2c-.3-.5-1-.5-1.3 0l-3 5.2L18 2.4z"/></svg></p>
           <div className="flex gap-5">
             <Link to="/terms" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
             <Link to="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>

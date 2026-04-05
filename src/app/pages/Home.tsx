@@ -230,6 +230,14 @@ export function Home() {
             Book a Demo
             <ArrowRight size={18} />
           </Link>
+
+          {/* Backed by */}
+          <div className="mt-16 pt-10 border-t border-white/10">
+            <p className="text-xs uppercase tracking-widest text-slate-500 mb-5">Backed by</p>
+            <a href="https://igniteatlantic.com" target="_blank" rel="noopener noreferrer" className="inline-block opacity-50 hover:opacity-80 transition-opacity">
+              <img src="/ignite-atlantic.png" alt="Ignite Atlantic" className="h-10 w-auto" />
+            </a>
+          </div>
         </div>
       </section>
     </div>
