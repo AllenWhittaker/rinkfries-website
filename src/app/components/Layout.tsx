@@ -38,12 +38,7 @@ export function Layout() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="w-8 h-8 bg-[#F59E0B] rounded-lg flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <circle cx="9" cy="9" r="7" stroke="#0D1B2A" strokeWidth="2" fill="none"/>
-                  <path d="M5 9 Q7 6 9 9 Q11 12 13 9" stroke="#0D1B2A" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                </svg>
-              </div>
+              <img src="/logo-white.png" alt="Rink Fries" className="h-9 w-auto" />
               <span className="text-white font-bold tracking-tight text-lg">
                 Rink<span className="text-[#F59E0B]">Fries</span>
               </span>
@@ -130,12 +125,7 @@ function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 bg-[#F59E0B] rounded-md flex items-center justify-center">
-                <svg width="15" height="15" viewBox="0 0 18 18" fill="none">
-                  <circle cx="9" cy="9" r="7" stroke="#0D1B2A" strokeWidth="2" fill="none"/>
-                  <path d="M5 9 Q7 6 9 9 Q11 12 13 9" stroke="#0D1B2A" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                </svg>
-              </div>
+              <img src="/logo-white.png" alt="Rink Fries" className="h-8 w-auto" />
               <span className="text-white font-bold tracking-tight">
                 Rink<span className="text-[#F59E0B]">Fries</span>
               </span>

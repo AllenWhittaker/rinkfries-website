@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { ArrowRight, Calendar, Clock, ChevronRight } from "lucide-react";
+import { PageMeta } from "../components/PageMeta";
 
 const CATEGORIES = ["All", "Product Updates", "Industry Insights", "Case Studies", "White Papers"];
 
@@ -34,6 +35,11 @@ export function Blog() {
 
   return (
     <div>
+      <PageMeta
+        title="Blog"
+        description="Product updates, industry insights, and case studies from the Rink Fries team."
+        path="/blog"
+      />
       {/* Header */}
       <section className="bg-[#0D1B2A] py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

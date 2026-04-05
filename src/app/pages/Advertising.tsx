@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight, Target, TrendingUp, Eye, Zap } from "lucide-react";
+import { PageMeta } from "../components/PageMeta";
 
 const AD_IMG = "https://images.unsplash.com/photo-1762417582263-7f423d344b77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZHZlcnRpc2luZyUyMGJpbGxib2FyZCUyMGRpZ2l0YWwlMjBkaXNwbGF5fGVufDF8fHx8MTc3NDc5OTM0MHww&ixlib=rb-4.1.0&q=80&w=1080";
 
@@ -7,19 +8,19 @@ const AD_PLACEMENTS = [
   {
     icon: <Target size={22} />,
     title: "Sponsored Menu Items",
-    desc: "Your product appears as a featured or sponsored item in the menu — with your branding, imagery, and a direct link. Shown at the point of selection.",
+    desc: "Your product appears as a featured or sponsored item in the menu, complete with your branding, imagery, and a direct link. Shown at the point of selection.",
     highlight: "Highest conversion placement",
   },
   {
     icon: <Eye size={22} />,
     title: "Banner Placements",
-    desc: "Display banners appear on the ordering home screen, cart page, and order confirmation — reaching customers at multiple touchpoints in a single order.",
+    desc: "Display banners appear on the ordering home screen, cart page, and order confirmation. Multiple touchpoints in a single order.",
     highlight: "Max impression volume",
   },
   {
     icon: <Zap size={22} />,
     title: "Event Sponsorship Integration",
-    desc: "Co-brand your product with a venue's event. Your logo and messaging appear throughout the event's ordering experience — from hero banner to receipt.",
+    desc: "Co-brand your product with a venue's event. Your logo and messaging appear throughout the event's ordering experience, from the hero banner all the way to the receipt.",
     highlight: "Full event coverage",
   },
   {
@@ -49,6 +50,11 @@ const IDEAL_ADVERTISERS = [
 export function Advertising() {
   return (
     <div>
+      <PageMeta
+        title="Advertising"
+        description="Reach fans and foodies at the point of purchase. Targeted in-app advertising across venues, arenas, and events."
+        path="/advertising"
+      />
       {/* Hero */}
       <section className="relative bg-[#0D1B2A] py-28 overflow-hidden">
         <div className="absolute inset-0">
@@ -61,7 +67,7 @@ export function Advertising() {
             Reach customers at the point of purchase.
           </h1>
           <p className="text-slate-300 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Your brand reaches consumers while they're actively ordering food and beverages at venues and events — the highest-intent advertising moment possible.
+            Your brand reaches consumers while they're actively ordering food and beverages at venues and events. That's the highest-intent advertising moment there is.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
@@ -102,13 +108,13 @@ export function Advertising() {
             <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-3">Why it works</p>
             <h2 className="text-3xl font-bold text-[#0D1B2A] mb-4">Context is everything.</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-              Traditional digital ads interrupt. RinkFries ads integrate. Your brand reaches customers at the exact moment they're deciding what to eat and drink — not when they're scrolling social media.
+              Traditional digital ads interrupt. RinkFries ads integrate. Your brand reaches customers at the exact moment they're deciding what to eat and drink, not when they're scrolling social media.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: "🍺", title: "Active purchase intent", desc: "Users are in ordering mode — primed to spend. Not passively browsing." },
+              { icon: "🍺", title: "Active purchase intent", desc: "Users are in ordering mode, ready to spend. They're not passively browsing." },
               { icon: "📍", title: "Physical-context targeting", desc: "Your ad appears at specific venues and events. Geographic precision at its most relevant." },
               { icon: "🎯", title: "Captive audience", desc: "Users are engaged with the ordering flow. No banner blindness, no scroll-past." },
             ].map((item) => (
@@ -128,7 +134,7 @@ export function Advertising() {
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-[#0D1B2A] mb-4">Ad placement options.</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              From subtle sponsored items to full-event co-branding — flexible formats to match your campaign goals.
+              From subtle sponsored items to full-event co-branding. Flexible formats to match your campaign goals.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">

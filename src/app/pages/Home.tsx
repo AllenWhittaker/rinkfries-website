@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight, Smartphone, BarChart3, Zap, QrCode, Users, Globe, CheckCircle2, ChevronRight } from "lucide-react";
+import { PageMeta } from "../components/PageMeta";
 
 const ARENA_IMG = "https://images.unsplash.com/photo-1762445964939-123200d655ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBhcmVuYSUyMHN0YWRpdW0lMjBuaWdodCUyMGxpZ2h0c3xlbnwxfHx8fDE3NzQ3OTkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080";
 
@@ -7,7 +8,7 @@ const VALUE_PROPS = [
   {
     icon: "🏒",
     title: "Venues & Arenas",
-    desc: "Mobile ordering, seat delivery, and concession management. Fans order from their phone — food comes to their seat. Zero line-ups.",
+    desc: "Mobile ordering, seat delivery, and concession management. Fans order from their phone and food comes to their seat. No more line-ups.",
     features: ["Seat-based ordering", "Multi-vendor concourse", "Real-time KDS"],
     color: "from-blue-500/10 to-blue-600/5",
     borderColor: "border-blue-500/20",
@@ -34,12 +35,12 @@ const HOW_IT_WORKS = [
   {
     step: "01",
     title: "Scan or visit",
-    desc: "Customer scans a QR code at their seat, table, or the entrance — or visits the venue's ordering URL.",
+    desc: "Customer scans a QR code at their seat, table, or entrance. They can also just visit the venue's ordering URL.",
   },
   {
     step: "02",
     title: "Browse & order",
-    desc: "They browse the menu, customize their order, and pay securely — no app download, no friction.",
+    desc: "They browse the menu, customize their order, and pay. No app download needed.",
   },
   {
     step: "03",
@@ -49,7 +50,7 @@ const HOW_IT_WORKS = [
   {
     step: "04",
     title: "Order fulfilled",
-    desc: "Order is prepared and delivered — to their seat, their table, or a pickup window. Done.",
+    desc: "Order is prepared and delivered to their seat, their table, or a pickup window.",
   },
 ];
 
@@ -58,6 +59,11 @@ const HOW_IT_WORKS = [
 export function Home() {
   return (
     <div>
+      <PageMeta
+        title="Rink Fries | Mobile Ordering for Venues, Restaurants & Events"
+        description="Mobile ordering infrastructure for arenas, restaurants, food trucks, and events. White-label ready. Built in Nova Scotia, Canada."
+        path="/"
+      />
       {/* Hero */}
       <section
         className="relative min-h-[92vh] flex items-center bg-[#0D1B2A] overflow-hidden"
@@ -85,7 +91,7 @@ export function Home() {
               Mobile ordering infrastructure for venues, restaurants, and events.
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
-              We power the ordering experience — not the food. Vendors keep their brand, their menu, their customers. You just get more orders, faster.
+              We power the ordering experience, not the food. Vendors keep their brand, their menu, their customers. You just get more orders, faster.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -119,7 +125,7 @@ export function Home() {
               One platform. Every venue type.
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-              Whether you're running a 5,000-seat arena, a 12-table café, or a weekend festival — RinkFries scales to fit.
+              Whether you're running a 5,000-seat arena, a 12-table café, or a weekend festival, RinkFries scales to fit.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -158,7 +164,7 @@ export function Home() {
                 Run your own branded ordering experience. Your domain, your logo, your customers. Powered by our infrastructure.
               </p>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Our V2 multi-tenant architecture allows franchise groups, venue management companies, and food hall operators to power dozens of branded experiences from a single backend — each fully customized.
+                Our V2 multi-tenant architecture lets franchise groups, venue management companies, and food hall operators run dozens of branded experiences from a single backend. Each one fully customized.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {["Custom domains", "Your branding", "Menu control", "Tenant isolation"].map((item) => (
@@ -189,7 +195,7 @@ export function Home() {
           <div className="text-center mb-16">
             <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-3">Simple by design</p>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#0D1B2A] mb-4">How it works</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">From QR scan to fulfilled order — the whole cycle in four steps.</p>
+            <p className="text-slate-500 max-w-xl mx-auto">From QR scan to fulfilled order in four steps.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {HOW_IT_WORKS.map((step, i) => (

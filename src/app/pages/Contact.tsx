@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, MessageSquare, CheckCircle2, ArrowRight } from "lucide-react";
+import { Mail, MessageSquare, CheckCircle2, ArrowRight, Loader2 } from "lucide-react";
+import { PageMeta } from "../components/PageMeta";
 
 const VENUE_TYPES = [
   "Arena / Rink",
@@ -22,6 +23,8 @@ const ROLES = [
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -31,9 +34,39 @@ export function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          site: "rinkfries.com",
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          fields: {
+            Company: form.company,
+            Role: form.role,
+            "Venue Type": form.venueType,
+          },
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -44,13 +77,18 @@ export function Contact() {
 
   return (
     <div>
+      <PageMeta
+        title="Book a Demo"
+        description="See Rink Fries in action. Book a 30-minute demo tailored to your venue. No sales pressure."
+        path="/contact"
+      />
       {/* Header */}
       <section className="bg-[#0D1B2A] py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-4">Get in Touch</p>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Book a Demo.</h1>
           <p className="text-slate-400 text-xl max-w-2xl">
-            See RinkFries in action — tailored to your venue type. 30 minutes, no sales pressure.
+            See RinkFries in action, tailored to your venue type. 30 minutes, no sales pressure.
           </p>
         </div>
       </section>
@@ -134,7 +172,7 @@ export function Contact() {
                 </div>
                 <h2 className="text-2xl font-bold text-[#0D1B2A] mb-3">Message received!</h2>
                 <p className="text-slate-500 max-w-md mb-8">
-                  Thanks for reaching out. Someone from our team will get back to you within one business day. We're based in Atlantic Canada — so expect a friendly reply.
+                  Thanks for reaching out. Someone from our team will get back to you within one business day. We're based in Atlantic Canada, so expect a friendly reply.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", email: "", company: "", role: "", venueType: "", message: "" }); }}
@@ -249,12 +287,28 @@ export function Contact() {
                   />
                 </div>
 
+                {error && (
+                  <div className="mb-5 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                    {error}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#F59E0B] text-[#0D1B2A] rounded-lg font-bold hover:bg-[#D97706] transition-colors"
+                  disabled={submitting}
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#F59E0B] text-[#0D1B2A] rounded-lg font-bold hover:bg-[#D97706] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Book a Demo
-                  <ArrowRight size={16} />
+                  {submitting ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      Book a Demo
+                      <ArrowRight size={16} />
+                    </>
+                  )}
                 </button>
 
                 <p className="text-slate-400 text-xs text-center mt-4">

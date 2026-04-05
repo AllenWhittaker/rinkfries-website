@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { PageMeta } from "../components/PageMeta";
 import {
   Smartphone, BarChart3, Zap, QrCode, Users, Globe, Clock,
   CreditCard, Settings, ShieldCheck, Tag, Monitor, ChevronRight,
@@ -16,7 +17,7 @@ const TABS = [
 const TAB_CONTENT = {
   venues: {
     headline: "Built for the arena environment.",
-    subhead: "From concession stands to seat delivery — manage it all from one dashboard while fans stay in their seats.",
+    subhead: "Manage everything from concession stands to seat delivery on one dashboard. Fans stay in their seats.",
     image: "https://images.unsplash.com/photo-1762445964939-123200d655ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBhcmVuYSUyMHN0YWRpdW0lMjBuaWdodCUyMGxpZ2h0c3xlbnwxfHx8fDE3NzQ3OTkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
     features: [
       { title: "Seat delivery & section ordering", desc: "Customers order by seat number. Orders routed to the right concession stand automatically." },
@@ -28,12 +29,12 @@ const TAB_CONTENT = {
   },
   restaurants: {
     headline: "Table-side ordering without the friction.",
-    subhead: "Guests scan a QR code, browse the menu, and pay — no app download, no waiting for a server to take their order.",
+    subhead: "Guests scan a QR code, browse the menu, and pay. No app download, no waiting for a server.",
     image: "https://images.unsplash.com/photo-1723985860719-dfcb45214606?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwdGFibGUlMjBxciUyMGNvZGUlMjBzY2FubmluZ3xlbnwxfHx8fDE3NzQ3OTkzMzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
     features: [
       { title: "QR code table ordering", desc: "One QR code per table. No equipment to install. Customers use their own phone." },
       { title: "No app download required", desc: "Web-based ordering works on any device. Scan, browse, done. Zero download barrier." },
-      { title: "Menu builder with modifiers", desc: "Full menu management — categories, items, options, add-ons, and dietary tags." },
+      { title: "Menu builder with modifiers", desc: "Full menu management with categories, items, options, add-ons, and dietary tags." },
       { title: "Tipping & service fee config", desc: "Configure suggested tip amounts, mandatory fees, and split payment rules." },
       { title: "Operating hours & auto-pause", desc: "Set service hours. The platform pauses ordering automatically when you're closed." },
     ],
@@ -51,7 +52,7 @@ const TAB_CONTENT = {
   },
   whitelabel: {
     headline: "Your brand. Our infrastructure.",
-    subhead: "Deploy a fully branded ordering platform under your own domain — powered by RinkFries behind the scenes.",
+    subhead: "Deploy a fully branded ordering platform under your own domain, powered by RinkFries behind the scenes.",
     image: "https://images.unsplash.com/photo-1768120147807-8236818aa9f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwb3JkZXJpbmclMjBraW9zayUyMHRlY2hub2xvZ3klMjB2ZW51ZXxlbnwxfHx8fDE3NzQ3OTkzNDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     features: [
       { title: "Custom domain & branding", desc: "Your logo, your colors, your domain. Customers never see the RinkFries name." },
@@ -64,7 +65,7 @@ const TAB_CONTENT = {
 
 const ALL_FEATURES = [
   { icon: <Smartphone size={20} />, title: "Mobile ordering (no app)", desc: "Web-based ordering works on any phone, instantly." },
-  { icon: <QrCode size={20} />, title: "Seat delivery / table service", desc: "Order by seat number or table — fulfilled in place." },
+  { icon: <QrCode size={20} />, title: "Seat delivery / table service", desc: "Order by seat number or table and it gets fulfilled in place." },
   { icon: <Monitor size={20} />, title: "Real-time KDS", desc: "Kitchen display system with live order queue." },
   { icon: <LayoutGrid size={20} />, title: "Menu builder (drag & drop)", desc: "Build menus, categories, and modifiers visually." },
   { icon: <Users size={20} />, title: "Multi-vendor per venue", desc: "Run multiple vendors from one central platform." },
@@ -87,6 +88,11 @@ export function Product() {
 
   return (
     <div>
+      <PageMeta
+        title="Product"
+        description="QR ordering, real-time dashboards, multi-vendor support, and integrated payments. Built for arenas, restaurants, and events."
+        path="/product"
+      />
       {/* Hero */}
       <section className="bg-[#0D1B2A] py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -95,7 +101,7 @@ export function Product() {
             The complete venue ordering platform.
           </h1>
           <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-10">
-            Purpose-built for the realities of live venues, restaurants, and events — not retrofitted from generic SaaS.
+            Purpose-built for live venues, restaurants, and events. Not retrofitted from generic SaaS.
           </p>
           <Link
             to="/contact"

@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight, MapPin } from "lucide-react";
+import { PageMeta } from "../components/PageMeta";
 
 const TEAM_IMG = "https://images.unsplash.com/photo-1657818023416-76df9aa8e093?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMHRlYW0lMjBzdGFydHVwJTIwb2ZmaWNlJTIwY2FuYWRhfGVufDF8fHx8MTc3NDc5OTMzN3ww&ixlib=rb-4.1.0&q=80&w=1080";
 
@@ -31,7 +32,7 @@ const VALUES = [
   {
     icon: "🏟️",
     title: "Built for real venues",
-    desc: "We don't ship features in theory — we test them at real venues, during real games, with real customers. If it doesn't work at the rink, it doesn't ship.",
+    desc: "We don't ship features in theory. We test them at real venues, during real games, with real customers. If it doesn't work at the rink, it doesn't ship.",
   },
   {
     icon: "🤝",
@@ -46,13 +47,18 @@ const VALUES = [
   {
     icon: "🚀",
     title: "Ship fast, ship right",
-    desc: "We're not building slides. We're shipping software. Fast iteration with real operators — and a serious commitment to stability in production.",
+    desc: "We're not building slides. We're shipping software. Fast iteration with real operators and a serious commitment to stability in production.",
   },
 ];
 
 export function About() {
   return (
     <div>
+      <PageMeta
+        title="About"
+        description="Rink Fries is a mobile ordering platform built in Pembroke, Nova Scotia. Meet the team behind the product."
+        path="/about"
+      />
       {/* Hero */}
       <section className="bg-[#0D1B2A] py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
@@ -68,7 +74,7 @@ export function About() {
               The idea started simple: let fans order from their phones so they never miss a goal. But once we deployed in our first arena in Nova Scotia and saw how dramatically it changed the experience for both fans and operators, we knew we were building something bigger.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              Today, RinkFries powers mobile ordering for arenas, restaurants, and events across Atlantic Canada — with a V2 platform that any venue operator or management company can deploy under their own brand.
+              Today, RinkFries powers mobile ordering for arenas, restaurants, and events across Atlantic Canada. Our V2 platform lets any venue operator or management company deploy it under their own brand.
             </p>
             <div className="flex items-center gap-2 mt-8 text-slate-400 text-sm">
               <MapPin size={14} className="text-[#F59E0B]" />
@@ -89,7 +95,7 @@ export function About() {
             "Make ordering seamless for every venue, every event, every community."
           </blockquote>
           <p className="text-slate-500 mt-6 text-lg">
-            Not just faster ordering — a fundamentally better experience for everyone: the fan, the operator, and the vendor.
+            Not just faster ordering. A better experience for the fan, the operator, and the vendor.
           </p>
         </div>
       </section>
@@ -167,7 +173,7 @@ export function About() {
       <section className="py-20 bg-[#0D1B2A]">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Want to work with us?</h2>
-          <p className="text-slate-400 mb-8">Whether you're an operator, investor, or someone who wants to join the team — we'd love to hear from you.</p>
+          <p className="text-slate-400 mb-8">Whether you're an operator, investor, or someone who wants to join the team, we'd love to hear from you.</p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#F59E0B] text-[#0D1B2A] rounded-lg font-bold hover:bg-[#D97706] transition-colors"

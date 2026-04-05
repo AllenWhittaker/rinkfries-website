@@ -7,6 +7,9 @@ import { Advertising } from "./pages/Advertising";
 import { Blog } from "./pages/Blog";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
+import { Terms } from "./pages/Terms";
+import { Privacy } from "./pages/Privacy";
+import { Cookies } from "./pages/Cookies";
 import { NotFound } from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -21,6 +24,9 @@ export const router = createBrowserRouter([
       { path: "blog", Component: Blog },
       { path: "about", Component: About },
       { path: "contact", Component: Contact },
+      { path: "terms", Component: Terms },
+      { path: "privacy", Component: Privacy },
+      { path: "cookies", Component: Cookies },
       { path: "*", Component: NotFound },
     ],
   },

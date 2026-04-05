@@ -1,12 +1,13 @@
 import { Link } from "react-router";
 import { ChevronRight, CheckCircle2, ArrowRight } from "lucide-react";
+import { PageMeta } from "../components/PageMeta";
 
 const USE_CASES = [
   { icon: "🏢", title: "Arena Management Companies", desc: "Power ordering for your entire portfolio of arenas under one contract, each with their own branding and configuration." },
   { icon: "🍜", title: "Food Hall Operators", desc: "Give each vendor in your food hall their own branded section, while you manage the entire venue from one dashboard." },
   { icon: "🔗", title: "Franchise Groups", desc: "Deploy consistent ordering experiences across all franchise locations, each with their own menu and customization." },
   { icon: "🎉", title: "Event Production Companies", desc: "Spin up branded ordering for every event you produce. No recurring per-event setup fees." },
-  { icon: "🏛️", title: "Municipal Recreation Departments", desc: "A single contract powers ordering at all your recreation facilities — arenas, pools, community centres." },
+  { icon: "🏛️", title: "Municipal Recreation Departments", desc: "A single contract powers ordering at all your recreation facilities: arenas, pools, community centres." },
 ];
 
 const PARTNER_STEPS = [
@@ -18,7 +19,7 @@ const PARTNER_STEPS = [
   {
     step: "02",
     title: "We configure your tenant",
-    desc: "Our team sets up your branded platform — domain, branding, menus, and permissions. Usually ready within a week.",
+    desc: "Our team sets up your branded platform: domain, branding, menus, and permissions. Usually ready within a week.",
   },
   {
     step: "03",
@@ -70,6 +71,11 @@ const BRANDED_TENANTS = [
 export function WhiteLabel() {
   return (
     <div>
+      <PageMeta
+        title="White-Label Platform"
+        description="Launch your own branded ordering platform powered by Rink Fries. Multi-tenant infrastructure, your brand, your customers."
+        path="/white-label"
+      />
       {/* Hero */}
       <section className="bg-[#0D1B2A] py-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -80,10 +86,10 @@ export function WhiteLabel() {
                 Your brand.<br />Our infrastructure.
               </h1>
               <p className="text-slate-300 text-xl leading-relaxed mb-8">
-                Deploy a fully branded mobile ordering platform under your own domain — without building the technology yourself.
+                Deploy a fully branded mobile ordering platform under your own domain. No need to build the technology yourself.
               </p>
               <p className="text-slate-400 leading-relaxed mb-8">
-                RinkFries powers the entire ordering stack — payments, menus, KDS, analytics — invisibly. Your customers only ever see your brand.
+                RinkFries powers the entire ordering stack (payments, menus, KDS, analytics) invisibly. Your customers only ever see your brand.
               </p>
               <Link
                 to="/contact"
@@ -110,7 +116,7 @@ export function WhiteLabel() {
                 Everything you need to launch your branded platform.
               </h2>
               <p className="text-slate-500 leading-relaxed mb-8">
-                No partial implementations. Every white-label partner gets access to the full platform — configured and branded for you from day one.
+                No partial implementations. Every white-label partner gets access to the full platform, configured and branded for you from day one.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {WHITELABEL_FEATURES.map((f) => (
