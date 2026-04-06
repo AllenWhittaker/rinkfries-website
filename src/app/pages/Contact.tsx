@@ -106,8 +106,8 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-[#0D1B2A] mb-0.5">General Inquiries</p>
-                  <a href="mailto:allen@rinkfries.ca" className="text-slate-500 text-sm hover:text-[#F59E0B] transition-colors">
-                    allen@rinkfries.ca
+                  <a href="mailto:support@rinkfries.ca" className="text-slate-500 text-sm hover:text-[#F59E0B] transition-colors">
+                    support@rinkfries.ca
                   </a>
                 </div>
               </div>
@@ -117,8 +117,8 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-[#0D1B2A] mb-0.5">Support</p>
-                  <a href="mailto:support@rinkfries.app" className="text-slate-500 text-sm hover:text-[#F59E0B] transition-colors">
-                    support@rinkfries.app
+                  <a href="mailto:support@rinkfries.ca" className="text-slate-500 text-sm hover:text-[#F59E0B] transition-colors">
+                    support@rinkfries.ca
                   </a>
                 </div>
               </div>

@@ -76,7 +76,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       new SendEmailCommand({
         Source: "RinkFries Website <no-reply@rinkfries.ca>",
         Destination: {
-          ToAddresses: ["allen@rinkfries.ca"],
+          ToAddresses: ["support@rinkfries.ca"],
         },
         ReplyToAddresses: [body.email],
         Message: {

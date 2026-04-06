@@ -29,7 +29,7 @@ export function Terms() {
             <div className="bg-slate-50 rounded-lg p-4 text-sm space-y-1">
               <p><strong>Business Name:</strong> Rink Fries Inc.</p>
               <p><strong>Jurisdiction:</strong> Nova Scotia, Canada</p>
-              <p><strong>Contact:</strong> support@rinkfries.app</p>
+              <p><strong>Contact:</strong> support@rinkfries.ca</p>
               <p><strong>Services Provided:</strong> Order placement and payment processing for food, beverages, and merchandise from independent vendors</p>
             </div>
           </Section>
@@ -79,7 +79,7 @@ export function Terms() {
             </p>
             <ul className="list-disc pl-5 space-y-1">
               <li>The order has not been fulfilled</li>
-              <li>The request is submitted in writing (email to support@rinkfries.app is acceptable)</li>
+              <li>The request is submitted in writing (email to support@rinkfries.ca is acceptable)</li>
             </ul>
             <p>
               Refunds for eligible cancellations will be processed within 15 days of the cancellation request. Platform service fees may be non-refundable as permitted by law.
@@ -135,7 +135,7 @@ export function Terms() {
           <Section title="11. Dispute Resolution">
             <p>For disputes regarding Rink Fries services (not vendor products):</p>
             <ol className="list-decimal pl-5 space-y-1">
-              <li><strong>Negotiation:</strong> Attempt good faith resolution by contacting support@rinkfries.app within 30 days of the issue.</li>
+              <li><strong>Negotiation:</strong> Attempt good faith resolution by contacting support@rinkfries.ca within 30 days of the issue.</li>
               <li><strong>Mediation:</strong> If unresolved, either party may submit the dispute to mediation, with costs shared equally.</li>
               <li><strong>Litigation:</strong> If mediation is unsuccessful, disputes may proceed to the courts of Nova Scotia.</li>
             </ol>
@@ -214,7 +214,7 @@ export function Terms() {
             <p>For questions regarding these Terms, please contact:</p>
             <p className="font-semibold">Rink Fries Inc.</p>
             <p>
-              <a href="mailto:support@rinkfries.app" className="text-[#2563EB] hover:underline">support@rinkfries.app</a>
+              <a href="mailto:support@rinkfries.ca" className="text-[#2563EB] hover:underline">support@rinkfries.ca</a>
             </p>
           </Section>
         </div>

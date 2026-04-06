@@ -174,13 +174,8 @@ function Footer() {
             <h4 className="text-white text-sm font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:allen@rinkfries.ca" className="hover:text-white transition-colors">
-                  allen@rinkfries.ca
-                </a>
-              </li>
-              <li>
-                <a href="mailto:support@rinkfries.app" className="hover:text-white transition-colors">
-                  support@rinkfries.app
+                <a href="mailto:support@rinkfries.ca" className="hover:text-white transition-colors">
+                  support@rinkfries.ca
                 </a>
               </li>
             </ul>

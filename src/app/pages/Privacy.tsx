@@ -157,7 +157,7 @@ export function Privacy() {
           <Section title="9. Complaints">
             <p>If you are not satisfied with how we handle your personal information:</p>
             <ol className="list-decimal pl-5 space-y-1">
-              <li>Contact our Privacy Contact at <a href="mailto:privacy@rinkfries.app" className="text-[#2563EB] hover:underline">privacy@rinkfries.app</a></li>
+              <li>Contact our Privacy Contact at <a href="mailto:support@rinkfries.ca" className="text-[#2563EB] hover:underline">support@rinkfries.ca</a></li>
               <li>We will acknowledge your complaint within 5 business days</li>
               <li>We will investigate and respond within 30 days</li>
             </ol>
@@ -183,7 +183,7 @@ export function Privacy() {
             <p className="font-semibold">Rink Fries Inc.</p>
             <p>
               <strong>Privacy Contact:</strong>{" "}
-              <a href="mailto:privacy@rinkfries.app" className="text-[#2563EB] hover:underline">privacy@rinkfries.app</a>
+              <a href="mailto:support@rinkfries.ca" className="text-[#2563EB] hover:underline">support@rinkfries.ca</a>
             </p>
           </Section>
         </div>

@@ -141,7 +141,7 @@ export function Blog() {
               We're working on product updates, industry insights, case studies, and practical guides for venue operators. Check back soon.
             </p>
             <a
-              href="mailto:allen@rinkfries.ca?subject=Blog%20Updates"
+              href="mailto:support@rinkfries.ca?subject=Blog%20Updates"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0D1B2A] text-white rounded-lg text-sm font-semibold hover:bg-[#1C2B3A] transition-colors"
             >
               Notify Me When We Publish

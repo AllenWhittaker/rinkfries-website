@@ -14,7 +14,7 @@ const PARTNER_STEPS = [
   {
     step: "01",
     title: "Contact us",
-    desc: "Reach out via the form below or email allen@rinkfries.ca. Tell us about your portfolio and what you're trying to build.",
+    desc: "Reach out via the form below or email support@rinkfries.ca. Tell us about your portfolio and what you're trying to build.",
   },
   {
     step: "02",

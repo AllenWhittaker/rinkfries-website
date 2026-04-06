@@ -71,14 +71,14 @@ export function Advertising() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
-              href="mailto:allen@rinkfries.ca"
+              href="mailto:support@rinkfries.ca"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#F59E0B] text-[#0D1B2A] rounded-lg font-bold hover:bg-[#D97706] transition-colors"
             >
               Advertise With Us
               <ArrowRight size={16} />
             </a>
             <a
-              href="mailto:allen@rinkfries.ca?subject=Media%20Kit%20Request"
+              href="mailto:support@rinkfries.ca?subject=Media%20Kit%20Request"
               className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/5 transition-colors"
             >
               Request Media Kit
@@ -186,13 +186,13 @@ export function Advertising() {
             Contact our team to discuss placement options, venue targeting, and campaign packages. We'll send over our media kit with full audience data.
           </p>
           <a
-            href="mailto:allen@rinkfries.ca"
+            href="mailto:support@rinkfries.ca"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#F59E0B] text-[#0D1B2A] rounded-lg font-bold hover:bg-[#D97706] transition-colors"
           >
             Advertise With Us
             <ArrowRight size={16} />
           </a>
-          <p className="mt-4 text-slate-500 text-sm">Or email us directly at <a href="mailto:allen@rinkfries.ca" className="text-[#F59E0B]">allen@rinkfries.ca</a></p>
+          <p className="mt-4 text-slate-500 text-sm">Or email us directly at <a href="mailto:support@rinkfries.ca" className="text-[#F59E0B]">support@rinkfries.ca</a></p>
         </div>
       </section>
     </div>

@@ -11,6 +11,7 @@ const TEAM_MEMBERS = [
     bio: "Has built LMS platforms, enterprise apps, and systems for Canadian universities and pharmaceutical companies. Recognized as a Pfizer Pharmaceutical Business Partner.",
     initials: "AW",
     color: "#1D4ED8",
+    email: "allen@rinkfries.ca",
   },
   {
     name: "Al Burr",
@@ -18,6 +19,7 @@ const TEAM_MEMBERS = [
     bio: "Deep experience in service and platform management, testing infrastructure, and systems reliability. Ensures the platform runs right.",
     initials: "AB",
     color: "#16A34A",
+    email: "al@rinkfries.ca",
   },
   {
     name: "Kristen LeBlanc",
@@ -25,6 +27,7 @@ const TEAM_MEMBERS = [
     bio: "A lifetime of sales and marketing experience across diverse industries. Leads revenue, partnerships, and market strategy.",
     initials: "KL",
     color: "#D97706",
+    email: "kristen@rinkfries.ca",
   },
 ];
 
@@ -141,6 +144,7 @@ export function About() {
                 <h3 className="font-bold text-[#0D1B2A] mb-0.5">{member.name}</h3>
                 <p className="text-[#F59E0B] text-sm font-semibold mb-2">{member.role}</p>
                 <p className="text-slate-500 text-xs leading-relaxed">{member.bio}</p>
+                <a href={`mailto:${member.email}`} className="text-slate-400 text-xs hover:text-[#F59E0B] transition-colors mt-2 inline-block">{member.email}</a>
               </div>
             ))}
           </div>
