@@ -88,7 +88,7 @@ export function Terms() {
 
           <Section title="6. Payments & Transactions">
             <ul className="list-disc pl-5 space-y-1">
-              <li>All payments are processed through third-party payment processors (e.g., Square, Stripe).</li>
+              <li>All payments are processed through third-party payment processors (e.g., Square, Moneris, Stripe).</li>
               <li>By completing a transaction, you authorize Rink Fries and its payment partners to process payments on your behalf.</li>
               <li>Rink Fries is not responsible for payment processor outages, delays, or errors.</li>
               <li>Chargebacks, fraud, or abuse may result in account suspension or termination.</li>
