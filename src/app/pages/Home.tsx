@@ -6,26 +6,26 @@ const ARENA_IMG = "https://images.unsplash.com/photo-1762445964939-123200d655ee?
 
 const VALUE_PROPS = [
   {
-    icon: "🏒",
-    title: "Venues & Arenas",
-    desc: "Mobile ordering, seat delivery, and concession management. Fans order from their phone and food comes to their seat. No more line-ups.",
-    features: ["Seat-based ordering", "Multi-vendor concourse", "Real-time KDS"],
+    icon: "📱",
+    title: "For customers",
+    desc: "Order and pay on your phone, from your seat at the rink or on your way in. Get a pickup code and updates by email or text, then grab your food when it's ready.",
+    features: ["Order and pay on your phone", "Pickup code and email or text updates", "Delivery and pre-ordering where the shop offers them"],
     color: "from-blue-500/10 to-blue-600/5",
     borderColor: "border-blue-500/20",
   },
   {
-    icon: "🍽️",
-    title: "Restaurants & Cafés",
-    desc: "Table-side ordering without the app download. Guests scan, browse, order, and pay. Reduce wait staff bottlenecks, increase table turns.",
-    features: ["QR code table ordering", "No app required", "Tipping & fee config"],
+    icon: "🍳",
+    title: "For the kitchen",
+    desc: "Orders land on the kitchen screen with a chime. Split your menu into stations, like Bar and Grill, and set each screen to show just its station.",
+    features: ["Kitchen order screen with a chime", "Stations for each part of the kitchen", "Print tickets right from the screen"],
     color: "from-amber-500/10 to-amber-600/5",
     borderColor: "border-amber-500/20",
   },
   {
-    icon: "🎪",
-    title: "Events & Food Trucks",
-    desc: "Pop-up ordering with event credits, ticketed experiences, and temporary vendor onboarding. From small markets to 10,000-person festivals.",
-    features: ["Event credits & ticketing", "Temporary vendors", "Settlement reports"],
+    icon: "📋",
+    title: "For managers",
+    desc: "Build your menu, set your opening hours, give your staff the right roles, handle refunds and see your sales in one place.",
+    features: ["Menus, options and sold out switches", "Sales analytics with CSV export", "Payments through Square, Moneris or Stripe"],
     color: "from-emerald-500/10 to-emerald-600/5",
     borderColor: "border-emerald-500/20",
   },
@@ -34,23 +34,23 @@ const VALUE_PROPS = [
 const HOW_IT_WORKS = [
   {
     step: "01",
-    title: "Scan or visit",
-    desc: "Customer scans a QR code at their seat, table, or entrance. They can also just visit the venue's ordering URL.",
+    title: "Open the menu",
+    desc: "Scan the code at the counter or go to rinkfries.app, then choose where you're ordering.",
   },
   {
     step: "02",
-    title: "Browse & order",
-    desc: "They browse the menu, customize their order, and pay. No app download needed.",
+    title: "Order and pay",
+    desc: "Pick your food, choose your options and pay on your phone.",
   },
   {
     step: "03",
-    title: "Vendor receives",
-    desc: "The vendor receives the order on their dashboard or Kitchen Display System in real time.",
+    title: "The kitchen gets it",
+    desc: "Your order shows up on the kitchen screen with a chime, and you get a pickup code and updates by email or text.",
   },
   {
     step: "04",
-    title: "Order fulfilled",
-    desc: "Order is prepared and delivered to their seat, their table, or a pickup window.",
+    title: "Pick it up",
+    desc: "When it's ready, show your pickup code and grab your food.",
   },
 ];
 
@@ -60,8 +60,8 @@ export function Home() {
   return (
     <div>
       <PageMeta
-        title="Rink Fries | Mobile Ordering for Venues, Restaurants & Events"
-        description="Mobile ordering infrastructure for arenas, restaurants, food trucks, and events. White-label ready. Built in Nova Scotia, Canada."
+        title="Rink Fries | Mobile Ordering for Rinks, Restaurants, Cafés and Food Trucks"
+        description="Order on your phone and pick up when it's ready. Mobile ordering for rink canteens, cafés and local food spots. Built in Nova Scotia, Canada."
         path="/"
       />
       {/* Hero */}
@@ -88,10 +88,10 @@ export function Home() {
           {/* Left — Copy */}
           <div>
             <h1 className="text-4xl lg:text-[3.25rem] font-bold text-white leading-[1.15] mb-6" style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)" }}>
-              Mobile ordering infrastructure for venues, restaurants, and events.
+              Order from your phone. Pick up when it's ready.
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-lg">
-              We power the ordering experience, not the food. Vendors keep their brand, their menu, their customers. You just get more orders, faster.
+              We power the ordering, not the food. Customers order and pay on their phone, then pick up when it's ready or have it brought to them where the shop offers delivery. You keep your menu, your staff and your customers.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -122,10 +122,10 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#0D1B2A] mb-4">
-              One platform. Every venue type.
+              One app for the whole operation.
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-              Whether you're running a 5,000-seat arena, a 12-table café, or a weekend festival, RinkFries scales to fit.
+              Rink Fries connects your customers, your kitchen and the person running the shop.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -148,44 +148,11 @@ export function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Platform section */}
-      <section className="py-24 bg-[#0D1B2A]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-4">White-Label Platform</p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                One platform. Every ordering scenario.
-              </h2>
-              <p className="text-slate-300 leading-relaxed mb-6">
-                Run your own branded ordering experience. Your domain, your logo, your customers. Powered by our infrastructure.
-              </p>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Our V2 multi-tenant architecture lets franchise groups, venue management companies, and food hall operators run dozens of branded experiences from a single backend. Each one fully customized.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {["Custom domains", "Your branding", "Menu control", "Tenant isolation"].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-slate-300 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-              <Link
-                to="/white-label"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F59E0B] text-[#0D1B2A] rounded-lg font-semibold text-sm hover:bg-[#D97706] transition-colors"
-              >
-                Explore White-Label
-                <ChevronRight size={14} />
-              </Link>
-            </div>
-            <div className="relative">
-              <PlatformDiagram />
-            </div>
-          </div>
+          <p className="text-center text-slate-500 text-sm mt-10">
+            Supported payment providers: Square, Moneris and Stripe. Using a different provider? Email{" "}
+            <a href="mailto:support@rinkfries.ca" className="text-[#F59E0B] hover:underline">support@rinkfries.ca</a>{" "}
+            and we'll see what we can do.
+          </p>
         </div>
       </section>
 
@@ -195,7 +162,7 @@ export function Home() {
           <div className="text-center mb-16">
             <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-3">Simple by design</p>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#0D1B2A] mb-4">How it works</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">From QR scan to fulfilled order in four steps.</p>
+            <p className="text-slate-500 max-w-xl mx-auto">From order to pickup in four steps.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {HOW_IT_WORKS.map((step, i) => (
@@ -218,10 +185,10 @@ export function Home() {
       <section className="py-24 bg-[#0D1B2A]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Ready to modernize your venue?
+            Ready to bring Rink Fries to your rink or café?
           </h2>
           <p className="text-slate-400 mb-8 text-lg">
-            Join venues across Atlantic Canada already running on RinkFries. Setup takes days, not months.
+            Tell us about your place and we'll show you how it works.
           </p>
           <Link
             to="/contact"
@@ -257,19 +224,19 @@ function MockupVisual() {
             <div className="w-2 h-2 rounded-full bg-yellow-500/70" />
             <div className="w-2 h-2 rounded-full bg-green-500/70" />
             <div className="flex-1 mx-3 bg-white/5 rounded text-xs text-center text-white/30 py-0.5">
-              dashboard.rinkfries.com
+              rinkfries.app
             </div>
           </div>
           {/* Dashboard content */}
           <div className="p-4">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-white/70 text-xs font-semibold">Live Orders</span>
+              <span className="text-white/70 text-xs font-semibold">Kitchen Screen</span>
               <span className="text-[#F59E0B] text-xs">● 12 active</span>
             </div>
             {[
-              { table: "Seat 14A", item: "Nachos + Coke", status: "Preparing", color: "bg-amber-500/20 text-amber-400" },
-              { table: "Table 7", item: "Burger Combo", status: "Ready", color: "bg-green-500/20 text-green-400" },
-              { table: "Section B3", item: "Hot Dog x2", status: "Received", color: "bg-blue-500/20 text-blue-400" },
+              { table: "Order 214 · Grill", item: "Poutine + Coke", status: "Preparing", color: "bg-amber-500/20 text-amber-400" },
+              { table: "Order 215 · Bar", item: "Hot Chocolate", status: "Ready", color: "bg-green-500/20 text-green-400" },
+              { table: "Order 216 · Grill", item: "Hot Dog x2", status: "Received", color: "bg-blue-500/20 text-blue-400" },
             ].map((order) => (
               <div key={order.table} className="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
                 <div>
@@ -291,8 +258,8 @@ function MockupVisual() {
           </div>
           <div className="p-2">
             <div className="bg-[#0D1B2A] rounded-xl p-2 mb-1.5">
-              <p className="text-[#F59E0B] text-xs font-bold mb-1">Your Arena</p>
-              <p className="text-white/50 text-xs mb-2">Seat 14A · Section C</p>
+              <p className="text-[#F59E0B] text-xs font-bold mb-1">Your Rink</p>
+              <p className="text-white/50 text-xs mb-2">Pickup at the canteen</p>
               <div className="space-y-1">
                 {["Nachos $8.50", "Hot Dog $5.00", "Pepsi $4.00"].map((item) => (
                   <div key={item} className="bg-white/5 rounded px-2 py-1 text-white/60 text-xs">{item}</div>
@@ -309,58 +276,7 @@ function MockupVisual() {
       {/* Floating badge */}
       <div className="absolute top-0 left-10 bg-white rounded-full px-3 py-1.5 shadow-lg flex items-center gap-1.5">
         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-        <span className="text-slate-700 text-xs font-semibold">Order Received</span>
-      </div>
-    </div>
-  );
-}
-
-// Platform multi-brand diagram
-function PlatformDiagram() {
-  const brands = [
-    { name: "RinkFries", color: "#3B82F6", icon: "🏒" },
-    { name: "LocalEats", color: "#10B981", icon: "🍽️" },
-    { name: "StreetEats", color: "#F59E0B", icon: "🚚" },
-  ];
-
-  return (
-    <div className="relative flex flex-col items-center gap-5">
-      {/* Central hub */}
-      <div className="relative bg-[#1C2B3A] border border-white/10 rounded-2xl p-5 w-full text-center">
-        <div className="inline-flex items-center gap-2 mb-2">
-          <div className="w-5 h-5 bg-[#F59E0B] rounded-md" />
-          <span className="text-white font-bold text-sm">RinkFries Infrastructure</span>
-        </div>
-        <p className="text-slate-400 text-xs">V2 Multi-tenant Platform</p>
-        <div className="flex flex-wrap justify-center gap-2 mt-3">
-          {["Orders", "Payments", "KDS", "Analytics", "Menus"].map((t) => (
-            <span key={t} className="px-2 py-0.5 bg-white/5 text-slate-400 rounded text-xs">{t}</span>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex items-center gap-2 text-slate-600 text-xs">
-        <div className="h-px w-8 bg-[#F59E0B]/50" />
-        Powers each tenant independently
-        <div className="h-px w-8 bg-[#F59E0B]/50" />
-      </div>
-
-      {/* Brand tenants */}
-      <div className="grid grid-cols-3 gap-3 w-full">
-        {brands.map((b) => (
-          <div
-            key={b.name}
-            className="bg-[#1C2B3A] border border-white/10 rounded-xl p-3 text-center"
-          >
-            <div className="text-2xl mb-1">{b.icon}</div>
-            <p className="text-white text-xs font-semibold leading-tight">{b.name}</p>
-            <div
-              className="w-full h-0.5 rounded-full mt-2"
-              style={{ backgroundColor: b.color }}
-            />
-            <p className="text-slate-500 text-xs mt-1">own brand</p>
-          </div>
-        ))}
+        <span className="text-slate-700 text-xs font-semibold">Order Ready</span>
       </div>
     </div>
   );

@@ -126,7 +126,7 @@ export function Contact() {
 
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-8">
               <p className="font-semibold text-[#0D1B2A] mb-1 text-sm">📍 Based in Nova Scotia</p>
-              <p className="text-slate-500 text-sm">Pembroke, Nova Scotia, Canada</p>
+              <p className="text-slate-500 text-sm">Yarmouth, Nova Scotia, Canada</p>
               <p className="text-slate-400 text-xs mt-1">Atlantic Standard Time (AST)</p>
             </div>
 
