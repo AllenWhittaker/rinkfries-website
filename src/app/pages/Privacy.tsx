@@ -57,6 +57,7 @@ export function Privacy() {
               <li>Tax registration numbers (e.g., GST/HST)</li>
               <li>Venue association and operational details</li>
               <li><strong>Encrypted OAuth access tokens</strong> for Stripe and Square integrations</li>
+              <li>Moneris store and checkout IDs, and an <strong>encrypted Moneris API token</strong></li>
             </ul>
 
             <h4 className="font-semibold text-slate-900 mt-4">1.6 Authentication & Technical Data</h4>
@@ -107,7 +108,7 @@ export function Privacy() {
             <p>We do <strong>not sell personal information</strong>. Information is shared only as necessary to operate the Platform.</p>
             <ul className="list-disc pl-5 space-y-1">
               <li><strong>Vendors & Shops:</strong> Order details, customer names, and fulfillment information are shared only with the vendor fulfilling the order.</li>
-              <li><strong>Payment Processors:</strong> We share required information with Stripe and Square.</li>
+              <li><strong>Payment Processors:</strong> We share required information with Stripe, Square and Moneris.</li>
               <li><strong>Infrastructure Providers:</strong> Cloud infrastructure (e.g., AWS), mapping services (e.g., Google APIs), and error monitoring (e.g., Sentry).</li>
             </ul>
 
