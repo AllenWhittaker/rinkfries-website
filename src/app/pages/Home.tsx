@@ -25,7 +25,7 @@ const VALUE_PROPS = [
     icon: "📋",
     title: "For managers",
     desc: "Build your menu, set your opening hours, give your staff the right roles, handle refunds and see your sales in one place.",
-    features: ["Menus, options and sold out switches", "Sales analytics with CSV export", "Payments through Square, Moneris or Stripe"],
+    features: ["Menus, options and sold out switches", "Sales analytics with CSV export", "Payments through Square or Moneris"],
     color: "from-emerald-500/10 to-emerald-600/5",
     borderColor: "border-emerald-500/20",
   },
@@ -168,7 +168,7 @@ export function Home() {
             ))}
           </div>
           <p className="text-center text-slate-500 text-sm mt-10">
-            Supported payment providers: Square, Moneris and Stripe. Using a different provider? Email{" "}
+            Supported payment providers: Square and Moneris. Using a different provider? Email{" "}
             <a href="mailto:support@rinkfries.ca" className="text-[#F59E0B] hover:underline">support@rinkfries.ca</a>{" "}
             and we'll see what we can do.
           </p>

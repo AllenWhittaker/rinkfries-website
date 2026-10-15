@@ -43,7 +43,7 @@ const TAB_CONTENT = {
   },
   managers: {
     headline: "Run your shop your way.",
-    subhead: "Set up your menu, your hours and your team, and take payments through Square, Moneris or Stripe.",
+    subhead: "Set up your menu, your hours and your team, and take payments through Square or Moneris.",
     image: "https://images.unsplash.com/photo-1548496600-1ca5fd14a56a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwdHJ1Y2slMjBmZXN0aXZhbCUyMGV2ZW50JTIwY3Jvd2R8ZW58MXx8fHwxNzc0Nzk5MzMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
     features: [
       { title: "We build your menu", desc: "Send us your menu and photos, and we'll set it up for you when you get started." },
@@ -54,7 +54,7 @@ const TAB_CONTENT = {
       { title: "Pre-order windows", desc: "Open pre-ordering for the times that suit you." },
       { title: "Sales analytics", desc: "See your sales by day and export them to CSV." },
       { title: "Canadian sales tax", desc: "HST set up for you, with tax included pricing if you prefer." },
-      { title: "Square, Moneris and Stripe", desc: "Take payments through the provider you already use." },
+      { title: "Square and Moneris", desc: "Take payments through the provider you already use." },
     ],
   },
 };
@@ -75,7 +75,7 @@ const ALL_FEATURES = [
   { icon: <RotateCcw size={20} />, title: "Refunds", desc: "Refund a whole order or a single item." },
   { icon: <BarChart3 size={20} />, title: "Sales analytics", desc: "Sales by day, with CSV export." },
   { icon: <Percent size={20} />, title: "Canadian sales tax", desc: "HST set up for you." },
-  { icon: <CreditCard size={20} />, title: "Square, Moneris and Stripe", desc: "Take payments through the provider you use." },
+  { icon: <CreditCard size={20} />, title: "Square and Moneris", desc: "Take payments through the provider you use." },
 ];
 
 export function Product() {
@@ -86,7 +86,7 @@ export function Product() {
     <div>
       <PageMeta
         title="Product"
-        description="Mobile ordering for rinks, restaurants, cafés and food trucks. Kitchen screen, stations, pre-ordering, analytics, and Square, Moneris or Stripe payments."
+        description="Mobile ordering for rinks, restaurants, cafés and food trucks. Kitchen screen, stations, pre-ordering, analytics, and Square or Moneris payments."
         path="/product"
       />
       {/* Hero */}
@@ -189,7 +189,7 @@ export function Product() {
             ))}
           </div>
           <p className="text-center text-slate-500 text-sm mt-10">
-            Supported payment providers: Square, Moneris and Stripe. Using a different provider? Email{" "}
+            Supported payment providers: Square and Moneris. Using a different provider? Email{" "}
             <a href="mailto:support@rinkfries.ca" className="text-[#F59E0B] hover:underline">support@rinkfries.ca</a>{" "}
             and we'll see what we can do.
           </p>
