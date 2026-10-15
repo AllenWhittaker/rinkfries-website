@@ -70,6 +70,7 @@ const LOCATION_GROUPS: { area: string; places: { name: string; town: string; hre
       { name: "Mama's Good Eats", town: "Yarmouth" },
       { name: "Mr. Singh's Quick and Tasty", town: "Yarmouth" },
       { name: "Breezeway Café", town: "Tusket" },
+      { name: "Little Town Coffee Co.", town: "Yarmouth" },
     ],
   },
 ];
@@ -289,7 +290,7 @@ const MENU_ITEMS = [
 
 function MockupVisual() {
   return (
-    <div className="relative w-full max-w-md mx-auto h-80 lg:h-96" style={APP_FONT}>
+    <div className="relative w-full max-w-md mx-auto h-80 lg:h-96" style={APP_FONT} aria-hidden="true">
       {/* Laptop frame: the v1 kitchen orders screen */}
       <div className="absolute right-0 top-8 w-72 lg:w-80">
         <div className="bg-[#1C2B3A] rounded-xl border border-white/10 shadow-2xl overflow-hidden">
@@ -383,7 +384,7 @@ const NS_OUTLINE = "M177 157 L181 155 L186 148 L192 139 L202 138 L204 133 L219 1
 function MapBubble({ x, y, count, label, labelDx }: { x: number; y: number; count: number; label: string; labelDx: number }) {
   return (
     <g>
-      <circle cx={x} cy={y} r="30" fill="#F59E0B" opacity="0.35" className="animate-ping" style={{ transformBox: "fill-box", transformOrigin: "center" }} />
+      <circle cx={x} cy={y} r="30" fill="#F59E0B" opacity="0.35" className="motion-safe:animate-ping" style={{ transformBox: "fill-box", transformOrigin: "center" }} />
       <circle cx={x} cy={y} r="22" fill="#F59E0B" stroke="#fff" strokeWidth="5" />
       <circle cx={x + 19} cy={y - 19} r="15" fill="#0D1B2A" stroke="#fff" strokeWidth="2" />
       <text x={x + 19} y={y - 13} textAnchor="middle" fontSize="17" fontWeight="700" fill="#fff">{count}</text>
