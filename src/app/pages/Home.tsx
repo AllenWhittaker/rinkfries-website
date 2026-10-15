@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight, Smartphone, BarChart3, Zap, QrCode, Users, Globe, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowRight, MapPin, Smartphone, BarChart3, Zap, QrCode, Users, Globe, CheckCircle2, ChevronRight } from "lucide-react";
 import { PageMeta } from "../components/PageMeta";
 
 const ARENA_IMG = "https://images.unsplash.com/photo-1762445964939-123200d655ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBhcmVuYSUyMHN0YWRpdW0lMjBuaWdodCUyMGxpZ2h0c3xlbnwxfHx8fDE3NzQ3OTkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080";
@@ -55,6 +55,24 @@ const HOW_IT_WORKS = [
 ];
 
 
+
+// Live locations. Every venue has agreed to be listed (Allen, 2026-10-07).
+// Add a shop's rinkfries.app link as `href` to make its name a link.
+const LOCATION_GROUPS: { area: string; places: { name: string; town: string; href?: string }[] }[] = [
+  {
+    area: "Pictou County",
+    places: [{ name: "Pictou County Wellness Centre", town: "New Glasgow" }],
+  },
+  {
+    area: "Yarmouth area",
+    places: [
+      { name: "Third Cup Café", town: "Yarmouth" },
+      { name: "Mama's Good Eats", town: "Yarmouth" },
+      { name: "Mr. Singh's Quick and Tasty", town: "Yarmouth" },
+      { name: "Breezeway Café", town: "Tusket" },
+    ],
+  },
+];
 
 export function Home() {
   return (
@@ -181,6 +199,39 @@ export function Home() {
         </div>
       </section>
 
+      {/* Where you can order today */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0D1B2A] mb-4">Where you can order today</h2>
+            <p className="text-slate-500 text-lg mb-10">Live at rinks, cafés and restaurants in Nova Scotia, and growing.</p>
+            <div className="grid sm:grid-cols-2 gap-8">
+              {LOCATION_GROUPS.map((group) => (
+                <div key={group.area}>
+                  <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-3">{group.area}</p>
+                  <ul className="space-y-2.5">
+                    {group.places.map((place) => (
+                      <li key={place.name} className="flex items-start gap-2 text-sm text-slate-700">
+                        <MapPin size={14} className="text-[#F59E0B] shrink-0 mt-0.5" />
+                        <span>
+                          {place.href ? (
+                            <a href={place.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0D1B2A] hover:text-[#D97706] hover:underline">{place.name}</a>
+                          ) : (
+                            <span className="font-semibold text-[#0D1B2A]">{place.name}</span>
+                          )}
+                          , {place.town}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          <NovaScotiaMap />
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="py-24 bg-[#0D1B2A]">
         <div className="max-w-3xl mx-auto px-6 text-center">
@@ -201,9 +252,18 @@ export function Home() {
           {/* Backed by */}
           <div className="mt-16 pt-10 border-t border-white/10">
             <p className="text-xs uppercase tracking-widest text-slate-500 mb-5">Backed by</p>
-            <a href="https://igniteatlantic.com" target="_blank" rel="noopener noreferrer" className="inline-block opacity-50 hover:opacity-80 transition-opacity">
-              <img src="/ignite-atlantic.png" alt="Ignite Atlantic" className="h-10 w-auto" />
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+              <a href="https://igniteatlantic.com" target="_blank" rel="noopener noreferrer" className="inline-block opacity-80 hover:opacity-100 transition-opacity">
+                <img src="/ignite-atlantic.png" alt="Ignite Atlantic" className="h-14 sm:h-16 w-auto" />
+              </a>
+              <a href="https://sparknovascotia.com" target="_blank" rel="noopener noreferrer" className="inline-block opacity-80 hover:opacity-100 transition-opacity">
+                <img src="/spark-nova-scotia.png" alt="Spark Nova Scotia" className="h-12 sm:h-14 w-auto" />
+              </a>
+            </div>
+            <div className="mt-8 space-y-1.5 text-sm text-slate-400">
+              <p>Second place, Spark Nova Scotia 2025.</p>
+              <p>Nominated for Rising Star of the Year at the 2026 Yarmouth Business Awards.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -211,11 +271,26 @@ export function Home() {
   );
 }
 
-// Stylized phone + laptop mockup
+// Phone + laptop mockup, styled after the live v1 app (rinkfries.app)
+const APP_FONT = { fontFamily: "system-ui, -apple-system, 'Segoe UI', sans-serif" };
+
+const KITCHEN_ORDERS = [
+  { code: "7K2Q", status: "Preparing Order", badge: "bg-sky-50 text-sky-800 ring-sky-200", name: "Jordan", items: [["2x Poutine", "Extra gravy"], ["1x Pepsi", ""]], action: "Mark Ready" },
+  { code: "M4TX", status: "Ready", badge: "bg-emerald-50 text-emerald-800 ring-emerald-200", name: "Sam", items: [["1x Hot Chocolate", "Medium"]], action: "Mark Complete" },
+  { code: "Q9RB", status: "Order Received", badge: "bg-sky-50 text-sky-800 ring-sky-200", name: "Guest", items: [["2x Hot Dog", "Ketchup, mustard"]], action: "Confirm Order" },
+];
+
+const MENU_ITEMS = [
+  { emoji: "🍟", name: "Poutine", desc: "Fries, curds, gravy", price: "$8.50" },
+  { emoji: "🌭", name: "Hot Dog", desc: "All beef", price: "$5.00" },
+  { emoji: "☕", name: "Hot Chocolate", desc: "Medium", price: "$3.00" },
+  { emoji: "🧀", name: "Nachos", desc: "Cheese, salsa", price: "$9.00", soldOut: true },
+];
+
 function MockupVisual() {
   return (
-    <div className="relative w-full max-w-md mx-auto h-80 lg:h-96">
-      {/* Laptop frame */}
+    <div className="relative w-full max-w-md mx-auto h-80 lg:h-96" style={APP_FONT}>
+      {/* Laptop frame: the v1 kitchen orders screen */}
       <div className="absolute right-0 top-8 w-72 lg:w-80">
         <div className="bg-[#1C2B3A] rounded-xl border border-white/10 shadow-2xl overflow-hidden">
           {/* Laptop top bar */}
@@ -228,47 +303,66 @@ function MockupVisual() {
             </div>
           </div>
           {/* Dashboard content */}
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-white/70 text-xs font-semibold">Kitchen Screen</span>
-              <span className="text-[#F59E0B] text-xs">● 12 active</span>
-            </div>
-            {[
-              { table: "Order 214 · Grill", item: "Poutine + Coke", status: "Preparing", color: "bg-amber-500/20 text-amber-400" },
-              { table: "Order 215 · Bar", item: "Hot Chocolate", status: "Ready", color: "bg-green-500/20 text-green-400" },
-              { table: "Order 216 · Grill", item: "Hot Dog x2", status: "Received", color: "bg-blue-500/20 text-blue-400" },
-            ].map((order) => (
-              <div key={order.table} className="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
-                <div>
-                  <p className="text-white/80 text-xs font-medium">{order.table}</p>
-                  <p className="text-white/40 text-xs">{order.item}</p>
-                </div>
-                <span className={`text-xs px-2 py-0.5 rounded-full ${order.color}`}>{order.status}</span>
+          <div className="flex bg-gray-100">
+            <div className="w-8 bg-[#002C5F] shrink-0" />
+            <div className="flex-1 p-2.5 space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-bold text-slate-900">Order Management</span>
+                <span className="flex items-center gap-1 text-[8px] text-slate-500">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Live updates active
+                </span>
               </div>
-            ))}
+              {KITCHEN_ORDERS.map((o) => (
+                <div key={o.code} className="bg-white rounded-lg shadow-sm px-2 py-1.5">
+                  <div className="flex items-center gap-1 mb-1">
+                    <span className={`text-[7px] font-semibold px-1.5 py-px rounded-full ring-1 ${o.badge}`}>{o.status}</span>
+                    <span className="text-[7px] font-mono font-bold bg-slate-100 text-slate-700 px-1 rounded">{o.code}</span>
+                    <span className="text-[7px] text-slate-400 ml-auto">{o.name} · Pickup</span>
+                  </div>
+                  <div className="flex items-end justify-between gap-2">
+                    <div className="min-w-0">
+                      {o.items.map(([item, opt]) => (
+                        <p key={item} className="text-[8px] text-slate-800 leading-tight truncate">
+                          {item}{opt && <span className="text-slate-400"> · {opt}</span>}
+                        </p>
+                      ))}
+                    </div>
+                    <span className="shrink-0 text-[7px] font-black text-white bg-[#002C5F] rounded px-1.5 py-0.5">{o.action}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Phone frame */}
-      <div className="absolute left-0 bottom-0 w-28 lg:w-32">
+      {/* Phone frame: the v1 customer menu */}
+      <div className="absolute left-0 bottom-0 w-32 lg:w-36">
         <div className="bg-[#1C2B3A] rounded-3xl border-2 border-white/15 shadow-2xl overflow-hidden">
-          <div className="bg-[#152032] h-5 flex items-center justify-center">
+          <div className="bg-[#002C5F] h-5 flex items-center justify-center">
             <div className="w-8 h-1 rounded-full bg-white/20" />
           </div>
-          <div className="p-2">
-            <div className="bg-[#0D1B2A] rounded-xl p-2 mb-1.5">
-              <p className="text-[#F59E0B] text-xs font-bold mb-1">Your Rink</p>
-              <p className="text-white/50 text-xs mb-2">Pickup at the canteen</p>
-              <div className="space-y-1">
-                {["Nachos $8.50", "Hot Dog $5.00", "Pepsi $4.00"].map((item) => (
-                  <div key={item} className="bg-white/5 rounded px-2 py-1 text-white/60 text-xs">{item}</div>
-                ))}
-              </div>
+          <div className="bg-white">
+            <div className="bg-[#002C5F] px-2 pt-3 pb-2">
+              <p className="text-white text-[11px] font-black leading-tight">Rink Canteen</p>
             </div>
-            <button className="w-full bg-[#F59E0B] text-[#0D1B2A] rounded-lg py-1.5 text-xs font-bold">
-              Place Order
-            </button>
+            <div className="flex gap-1 px-1.5 py-1 border-b border-slate-100">
+              <span className="text-[6px] font-bold rounded-full px-1.5 py-px bg-[#002C5F] text-white">Hot Food</span>
+              <span className="text-[6px] font-bold rounded-full px-1.5 py-px border border-slate-200 text-slate-600">Drinks</span>
+            </div>
+            {MENU_ITEMS.map((m) => (
+              <div key={m.name} className={`flex items-center gap-1 px-1.5 py-1 border-b border-slate-100 ${m.soldOut ? "opacity-60 grayscale bg-slate-50" : ""}`}>
+                <div className="w-5 h-5 rounded bg-[#FBEEDB] flex items-center justify-center text-[10px] shrink-0">{m.emoji}</div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[7px] font-bold text-slate-900 truncate leading-tight">{m.name}</p>
+                  <p className="text-[6px] text-slate-500 truncate leading-tight">{m.soldOut ? "Sold Out" : m.desc}</p>
+                </div>
+                <span className="text-[7px] font-extrabold text-slate-900">{m.price}</span>
+                <span className="w-3 h-3 rounded-full bg-blue-50 text-blue-600 text-[7px] flex items-center justify-center shrink-0">›</span>
+              </div>
+            ))}
+            <div className="h-5 bg-[#002C5F]" />
           </div>
         </div>
       </div>
@@ -278,6 +372,35 @@ function MockupVisual() {
         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
         <span className="text-slate-700 text-xs font-semibold">Order Ready</span>
       </div>
+    </div>
+  );
+}
+
+// Static map of Nova Scotia (outline: Natural Earth, public domain) with one
+// bubble per area. No map provider, so no third party requests.
+const NS_OUTLINE = "M177 157 L181 155 L186 148 L192 139 L202 138 L204 133 L219 140 L235 154 L247 151 L253 151 L267 160 L271 164 L273 168 L281 167 L291 164 L309 164 L329 169 L328 176 L325 181 L340 180 L350 185 L353 183 L355 179 L375 170 L399 152 L402 154 L404 161 L407 173 L416 181 L428 182 L443 176 L449 181 L456 191 L463 204 L463 209 L454 213 L446 219 L479 221 L483 224 L487 229 L483 234 L480 237 L474 234 L463 237 L453 243 L443 247 L436 247 L428 251 L422 255 L415 257 L393 269 L370 276 L347 289 L323 297 L298 306 L293 307 L286 306 L272 316 L265 314 L258 316 L250 314 L244 310 L248 320 L250 329 L247 333 L244 337 L229 336 L224 333 L217 328 L214 321 L207 315 L202 323 L203 329 L197 336 L191 323 L180 328 L175 342 L177 346 L181 357 L175 362 L171 361 L163 377 L152 382 L142 398 L129 411 L125 419 L104 438 L96 437 L90 438 L81 445 L80 461 L76 459 L72 460 L70 465 L67 465 L59 461 L50 463 L43 460 L34 437 L29 429 L20 426 L18 431 L15 436 L6 426 L0 391 L0 382 L9 352 L31 325 L24 325 L4 343 L6 339 L10 334 L16 326 L26 319 L39 315 L48 314 L54 311 L63 304 L65 300 L57 304 L44 308 L47 303 L51 300 L122 252 L136 244 L164 234 L168 227 L164 223 L176 227 L175 232 L173 236 L172 243 L173 249 L185 253 L194 265 L190 248 L198 239 L230 226 L258 225 L266 219 L243 215 L216 218 L199 213 L175 216 L150 213 L143 217 L136 225 L128 221 L124 221 L121 218 L129 205 L154 185 L169 167 L174 164 L177 157 Z M480 142 L483 143 L496 137 L502 137 L502 141 L491 147 L486 150 L492 154 L492 156 L485 162 L481 168 L484 174 L496 168 L501 168 L508 170 L514 168 L518 165 L539 142 L540 139 L517 144 L515 140 L530 126 L529 119 L536 107 L543 101 L548 97 L556 93 L561 99 L562 109 L575 107 L587 109 L597 113 L598 116 L598 120 L595 126 L590 132 L600 139 L599 142 L582 151 L573 159 L564 169 L547 181 L520 189 L512 189 L502 187 L492 187 L482 190 L472 190 L467 192 L463 191 L459 188 L451 179 L447 172 L443 142 L444 127 L451 112 L461 102 L467 94 L491 48 L496 37 L502 28 L512 20 L526 5 L530 1 L538 0 L545 1 L543 6 L544 12 L553 32 L552 36 L548 53 L538 79 L536 94 L537 99 L533 106 L529 112 L514 122 L505 125 L498 129 L480 142 Z";
+
+function MapBubble({ x, y, count, label, labelDx }: { x: number; y: number; count: number; label: string; labelDx: number }) {
+  return (
+    <g>
+      <circle cx={x} cy={y} r="30" fill="#F59E0B" opacity="0.35" className="animate-ping" style={{ transformBox: "fill-box", transformOrigin: "center" }} />
+      <circle cx={x} cy={y} r="22" fill="#F59E0B" stroke="#fff" strokeWidth="5" />
+      <circle cx={x + 19} cy={y - 19} r="15" fill="#0D1B2A" stroke="#fff" strokeWidth="2" />
+      <text x={x + 19} y={y - 13} textAnchor="middle" fontSize="17" fontWeight="700" fill="#fff">{count}</text>
+      <text x={x + labelDx} y={y + 8} textAnchor={labelDx < 0 ? "end" : "start"} fontSize="24" fontWeight="700" fill="#0D1B2A">{label}</text>
+    </g>
+  );
+}
+
+function NovaScotiaMap() {
+  const [pictou, yarmouth] = LOCATION_GROUPS;
+  return (
+    <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 sm:p-6">
+      <svg viewBox="-40 -20 680 510" className="w-full h-auto" role="img" aria-label="Map of Nova Scotia showing Rink Fries locations in Pictou County and the Yarmouth area">
+        <path d={NS_OUTLINE} fill="#E2E8F0" stroke="#CBD5E1" strokeWidth="2" strokeLinejoin="round" />
+        <MapBubble x={334} y={189} count={pictou.places.length} label="Pictou County" labelDx={-38} />
+        <MapBubble x={12} y={420} count={yarmouth.places.length} label="Yarmouth area" labelDx={44} />
+      </svg>
     </div>
   );
 }

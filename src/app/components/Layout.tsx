@@ -115,7 +115,7 @@ export function Layout() {
       </header>
 
       {/* Page content */}
-      <main className="pt-[100px]">
+      <main className="pt-[6.25rem]">
         <Outlet />
       </main>
 
@@ -142,6 +142,15 @@ function Footer() {
               Mobile ordering for rinks, restaurants, cafés and food trucks. Built in Nova Scotia, Canada.
             </p>
             <p className="text-xs text-slate-500">📍 Yarmouth, Nova Scotia</p>
+            <a
+              href="https://yarmouthchamberofcommerce.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity"
+            >
+              <img src="/yarmouth-chamber.png" alt="Yarmouth and Area Chamber of Commerce" className="h-16 w-auto" />
+              <span className="text-xs leading-snug text-slate-400">Proud member of the<br />Yarmouth and Area<br />Chamber of Commerce</span>
+            </a>
           </div>
 
           {/* Platform */}

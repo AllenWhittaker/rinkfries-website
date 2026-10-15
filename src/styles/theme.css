@@ -137,6 +137,13 @@
     font-size: var(--font-size);
   }
 
+  /* Larger base text on phones; every rem based size scales with it */
+  @media (max-width: 639px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
   h1 {
     font-size: var(--text-2xl);
     font-weight: var(--font-weight-medium);

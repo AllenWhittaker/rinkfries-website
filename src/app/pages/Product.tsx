@@ -18,7 +18,7 @@ const TAB_CONTENT = {
   customers: {
     headline: "Order from your phone.",
     subhead: "Customers order and pay on their phone, then pick up when it's ready.",
-    image: "https://images.unsplash.com/photo-1723985860719-dfcb45214606?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwdGFibGUlMjBxciUyMGNvZGUlMjBzY2FubmluZ3xlbnwxfHx8fDE3NzQ3OTkzMzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/images/app-customer-phones.png",
     features: [
       { title: "Order on your phone", desc: "Browse the menu, choose your options and order from your seat at the rink or on your way in." },
       { title: "Pay on your phone", desc: "Checkout happens on your phone, so there is nothing to pay at the counter." },
@@ -32,7 +32,7 @@ const TAB_CONTENT = {
   kitchen: {
     headline: "Built for a busy kitchen.",
     subhead: "New orders arrive on the kitchen screen as they come in, so staff can focus on cooking.",
-    image: "https://images.unsplash.com/photo-1762445964939-123200d655ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBhcmVuYSUyMHN0YWRpdW0lMjBuaWdodCUyMGxpZ2h0c3xlbnwxfHx8fDE3NzQ3OTkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/images/app-kitchen-screen.png",
     features: [
       { title: "Kitchen order screen", desc: "Every new order appears on the kitchen screen with a chime." },
       { title: "Stations", desc: "Split your menu into stations, like Bar and Grill, and set each kitchen screen to show just its station." },
@@ -110,7 +110,7 @@ export function Product() {
       </section>
 
       {/* Tab navigation */}
-      <section className="bg-white border-b border-slate-200 sticky top-[100px] z-40">
+      <section className="bg-white border-b border-slate-200 sticky top-[6.25rem] z-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex overflow-x-auto">
             {TABS.map((tab) => (
