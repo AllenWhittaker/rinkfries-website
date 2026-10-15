@@ -36,7 +36,7 @@ const TAB_CONTENT = {
     features: [
       { title: "Kitchen order screen", desc: "Every new order appears on the kitchen screen with a chime." },
       { title: "Stations", desc: "Split your menu into stations, like Bar and Grill, and set each kitchen screen to show just its station." },
-      { title: "Automatic printing", desc: "Run the kitchen screen in Chrome on a Windows, Mac or Linux computer and tickets print as orders come in. We set it up for you." },
+      { title: "Automatic printing", desc: "Run the kitchen screen in Chrome on a Windows, Mac or Linux computer and tickets print as orders come in. We help you set it up." },
       { title: "Print tickets", desc: "Print any order's ticket right from the kitchen screen." },
       { title: "Pre-order shopping list", desc: "See exactly what to make for each pre-order window, built from paid pre-orders. Print it or export it." },
     ],

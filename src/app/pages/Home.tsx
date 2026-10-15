@@ -265,6 +265,11 @@ export function Home() {
               <p>Second place, Spark Nova Scotia 2025.</p>
               <p>Nominated for Rising Star of the Year at the 2026 Yarmouth Business Awards.</p>
             </div>
+            <p className="mt-12 text-xs uppercase tracking-widest text-slate-500 mb-4">Founding sponsors</p>
+            <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-lg font-semibold text-white/80">
+              <li>Tusket Ford</li>
+              <li>Smith and Watt</li>
+            </ul>
           </div>
         </div>
       </section>

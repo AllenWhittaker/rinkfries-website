@@ -59,7 +59,7 @@ export function About() {
     <div>
       <PageMeta
         title="About"
-        description="Rink Fries is a mobile ordering platform built in Pembroke, Nova Scotia. Meet the team behind the product."
+        description="Rink Fries is a mobile ordering platform built in Yarmouth, Nova Scotia. Meet the team behind the product."
         path="/about"
       />
       {/* Hero */}
@@ -81,7 +81,7 @@ export function About() {
             </p>
             <div className="flex items-center gap-2 mt-8 text-slate-400 text-sm">
               <MapPin size={14} className="text-[#F59E0B]" />
-              Based in Pembroke, Nova Scotia, Canada
+              Based in Yarmouth, Nova Scotia, Canada
             </div>
           </div>
           <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
