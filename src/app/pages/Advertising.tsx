@@ -1,49 +1,30 @@
 import { Link } from "react-router";
-import { ArrowRight, Target, TrendingUp, Eye, Zap } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 import { PageMeta } from "../components/PageMeta";
 
 const AD_IMG = "https://images.unsplash.com/photo-1762417582263-7f423d344b77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZHZlcnRpc2luZyUyMGJpbGxib2FyZCUyMGRpZ2l0YWwlMjBkaXNwbGF5fGVufDF8fHx8MTc3NDc5OTM0MHww&ixlib=rb-4.1.0&q=80&w=1080";
 
 const AD_PLACEMENTS = [
   {
-    icon: <Target size={22} />,
-    title: "Sponsored Menu Items",
-    desc: "Your product appears as a featured or sponsored item in the menu, complete with your branding, imagery, and a direct link. Shown at the point of selection.",
-    highlight: "Highest conversion placement",
-  },
-  {
     icon: <Eye size={22} />,
-    title: "Banner Placements",
-    desc: "Display banners appear on the ordering home screen, cart page, and order confirmation. Multiple touchpoints in a single order.",
-    highlight: "Max impression volume",
-  },
-  {
-    icon: <Zap size={22} />,
-    title: "Event Sponsorship Integration",
-    desc: "Co-brand your product with a venue's event. Your logo and messaging appear throughout the event's ordering experience, from the hero banner all the way to the receipt.",
-    highlight: "Full event coverage",
-  },
-  {
-    icon: <TrendingUp size={22} />,
-    title: "Post-Order Upsell Placements",
-    desc: "After order submission, customers see a full-screen brand moment. Ideal for loyalty programs, upcoming promotions, or partner cross-sells.",
-    highlight: "100% viewable impression",
+    title: "Sponsored browse cards",
+    desc: "Your banner appears as a card in the browse list on rinkfries.app, where fans pick a canteen. Active ads take turns, so every ad gets seen.",
+    highlight: "Live today",
   },
 ];
 
 const AUDIENCE_STATS = [
-  { value: "100%", label: "Purchase Intent" },
-  { value: "Live", label: "At Point of Purchase" },
-  { value: "Zero", label: "Ad Blindness" },
-  { value: "Direct", label: "Venue Targeting" },
+  { value: "$100", label: "Per month" },
+  { value: "$1,000", label: "Per year, save $200" },
+  { value: "Your link", label: "Every click goes to the page you choose" },
+  { value: "Reporting", label: "Impressions and clicks" },
 ];
 
 const IDEAL_ADVERTISERS = [
-  "Beverage brands (beer, soft drinks, energy)",
-  "Snack and food brands",
-  "Sports apparel and merchandise",
-  "Financial products (credit cards, rewards programs)",
   "Local businesses and regional brands",
+  "Snack and food brands",
+  "Soft drink and beverage brands",
+  "Sports apparel and merchandise",
   "Event and entertainment promoters",
 ];
 
@@ -52,7 +33,7 @@ export function Advertising() {
     <div>
       <PageMeta
         title="Advertising"
-        description="Reach fans and foodies at the point of purchase. Targeted in-app advertising across venues, arenas, and events."
+        description="Put your business in front of local fans while they choose where to order. Sponsored cards in the Rink Fries browse list."
         path="/advertising"
       />
       {/* Hero */}
@@ -64,10 +45,10 @@ export function Advertising() {
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-4">Advertising Opportunities</p>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Reach customers at the point of purchase.
+            Reach local fans while they choose what to eat.
           </h1>
           <p className="text-slate-300 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Your brand reaches consumers while they're actively ordering food and beverages at venues and events. That's the highest-intent advertising moment there is.
+            Sponsored cards appear in the list fans browse to find a canteen on rinkfries.app. Your banner links to any page you choose: your website, a menu, a promotion or a sign up form.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
@@ -76,12 +57,6 @@ export function Advertising() {
             >
               Advertise With Us
               <ArrowRight size={16} />
-            </a>
-            <a
-              href="mailto:support@rinkfries.ca?subject=Media%20Kit%20Request"
-              className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/5 transition-colors"
-            >
-              Request Media Kit
             </a>
           </div>
         </div>
@@ -98,6 +73,9 @@ export function Advertising() {
               </div>
             ))}
           </div>
+          <p className="text-center text-slate-500 text-sm mt-10">
+            All prices include HST. Every sponsor is also featured on our social media.
+          </p>
         </div>
       </section>
 
@@ -108,15 +86,15 @@ export function Advertising() {
             <p className="text-[#F59E0B] text-sm font-semibold tracking-widest uppercase mb-3">Why it works</p>
             <h2 className="text-3xl font-bold text-[#0D1B2A] mb-4">Context is everything.</h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-              Traditional digital ads interrupt. RinkFries ads integrate. Your brand reaches customers at the exact moment they're deciding what to eat and drink, not when they're scrolling social media.
+              People open Rink Fries when they're hungry and ready to order. Your ad sits in the list they scroll to pick a canteen.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: "🍺", title: "Active purchase intent", desc: "Users are in ordering mode, ready to spend. They're not passively browsing." },
-              { icon: "📍", title: "Physical-context targeting", desc: "Your ad appears at specific venues and events. Geographic precision at its most relevant." },
-              { icon: "🎯", title: "Captive audience", desc: "Users are engaged with the ordering flow. No banner blindness, no scroll-past." },
+              { icon: "🍟", title: "Ready to order", desc: "Fans come to Rink Fries to buy food, so your ad meets them when they're ready to spend." },
+              { icon: "📍", title: "A local crowd", desc: "Rink Fries is built in Nova Scotia for local rinks, so your ad reaches people close to home." },
+              { icon: "🤝", title: "Simple to run", desc: "Send us your banner, your link and your dates. We set it up and send you the impression and click counts." },
             ].map((item) => (
               <div key={item.title} className="bg-white border border-slate-200 rounded-xl p-6 text-center">
                 <div className="text-4xl mb-4">{item.icon}</div>
@@ -132,12 +110,12 @@ export function Advertising() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-[#0D1B2A] mb-4">Ad placement options.</h2>
+            <h2 className="text-3xl font-bold text-[#0D1B2A] mb-4">How sponsored cards work.</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              From subtle sponsored items to full-event co-branding. Flexible formats to match your campaign goals.
+              One simple format, live in the app today.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid gap-6 max-w-2xl mx-auto">
             {AD_PLACEMENTS.map((p) => (
               <div key={p.title} className="border border-slate-200 rounded-xl p-7 bg-white hover:border-[#F59E0B]/40 hover:shadow-md transition-all">
                 <div className="flex items-start gap-4">
@@ -164,8 +142,8 @@ export function Advertising() {
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-[#0D1B2A] mb-3">Who advertises on RinkFries?</h2>
-            <p className="text-slate-500">Our platform is a natural fit for brands that want to be part of the game-day or event experience.</p>
+            <h2 className="text-2xl font-bold text-[#0D1B2A] mb-3">Who advertises on Rink Fries?</h2>
+            <p className="text-slate-500">A natural fit for businesses that want to be part of game night.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
             {IDEAL_ADVERTISERS.map((item) => (
@@ -179,11 +157,11 @@ export function Advertising() {
       </section>
 
       {/* Media kit / contact */}
-      <section id="media-kit" className="py-20 bg-[#0D1B2A]">
+      <section className="py-20 bg-[#0D1B2A]">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to reach our audience?</h2>
           <p className="text-slate-400 mb-6">
-            Contact our team to discuss placement options, venue targeting, and campaign packages. We'll send over our media kit with full audience data.
+            Tell us about your business and the dates you have in mind. We'll set up your sponsored card and send you the numbers.
           </p>
           <a
             href="mailto:support@rinkfries.ca"

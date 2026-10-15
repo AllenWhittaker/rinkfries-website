@@ -4,7 +4,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Product", href: "/product" },
-  { label: "White-Label", href: "/white-label" },
   { label: "Advertising", href: "/advertising" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
@@ -34,6 +33,15 @@ export function Layout() {
           scrolled ? "bg-[#0D1B2A]/98 backdrop-blur-md shadow-lg" : "bg-[#0D1B2A]"
         }`}
       >
+        {/* Order banner: sends people looking for food to the app */}
+        <a
+          href="https://rinkfries.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center h-9 px-4 bg-[#F59E0B] text-[#0D1B2A] text-sm font-semibold hover:bg-[#D97706] transition-colors"
+        >
+          Here to order food? Go to <span className="ml-1 underline underline-offset-2">rinkfries.app</span>
+        </a>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -107,7 +115,7 @@ export function Layout() {
       </header>
 
       {/* Page content */}
-      <main className="pt-16">
+      <main className="pt-[6.25rem]">
         <Outlet />
       </main>
 
@@ -131,9 +139,18 @@ function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-4">
-              Mobile ordering infrastructure for venues, restaurants, and events. Built in Nova Scotia, Canada.
+              Mobile ordering for rinks, restaurants, cafés and food trucks. Built in Nova Scotia, Canada.
             </p>
-            <p className="text-xs text-slate-500">📍 Pembroke, Nova Scotia</p>
+            <p className="text-xs text-slate-500">📍 Yarmouth, Nova Scotia</p>
+            <a
+              href="https://yarmouthchamberofcommerce.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity"
+            >
+              <img src="/yarmouth-chamber.png" alt="Yarmouth and Area Chamber of Commerce" className="h-16 w-auto" />
+              <span className="text-xs leading-snug text-slate-400">Proud member of the<br />Yarmouth and Area<br />Chamber of Commerce</span>
+            </a>
           </div>
 
           {/* Platform */}
@@ -142,7 +159,6 @@ function Footer() {
             <ul className="space-y-2.5 text-sm">
               {[
                 { label: "Product Overview", href: "/product" },
-                { label: "White-Label", href: "/white-label" },
                 { label: "Advertising", href: "/advertising" },
                 { label: "Book a Demo", href: "/contact" },
               ].map((l) => (

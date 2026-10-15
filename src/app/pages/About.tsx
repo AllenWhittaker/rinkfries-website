@@ -59,7 +59,7 @@ export function About() {
     <div>
       <PageMeta
         title="About"
-        description="Rink Fries is a mobile ordering platform built in Pembroke, Nova Scotia. Meet the team behind the product."
+        description="Rink Fries is a mobile ordering platform built in Yarmouth, Nova Scotia. Meet the team behind the product."
         path="/about"
       />
       {/* Hero */}
@@ -77,11 +77,11 @@ export function About() {
               The idea started simple: let fans order from their phones so they never miss a goal. But once we deployed in our first arena in Nova Scotia and saw how dramatically it changed the experience for both fans and operators, we knew we were building something bigger.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              Today, RinkFries powers mobile ordering for arenas, restaurants, and events across Atlantic Canada. Our V2 platform lets any venue operator or management company deploy it under their own brand.
+              Today, RinkFries powers mobile ordering for rinks, cafés and restaurants in Nova Scotia.
             </p>
             <div className="flex items-center gap-2 mt-8 text-slate-400 text-sm">
               <MapPin size={14} className="text-[#F59E0B]" />
-              Based in Pembroke, Nova Scotia, Canada
+              Based in Yarmouth, Nova Scotia, Canada
             </div>
           </div>
           <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
@@ -157,11 +157,10 @@ export function About() {
       {/* Company stage */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="grid sm:grid-cols-3 gap-8 text-center">
+          <div className="grid sm:grid-cols-2 gap-8 text-center">
             {[
               { icon: "🏒", title: "V1 in production", desc: "Real venues, real orders, real money flowing. We're not a prototype." },
-              { icon: "🚀", title: "V2 launching now", desc: "Multi-tenant white-label platform. The biggest release in our history." },
-              { icon: "📍", title: "Nova Scotia-based", desc: "Early-stage startup with production deployments across Atlantic Canada." },
+              { icon: "📍", title: "Nova Scotia-based", desc: "Early-stage startup with live deployments in Nova Scotia." },
             ].map((item) => (
               <div key={item.title}>
                 <div className="text-4xl mb-3">{item.icon}</div>
